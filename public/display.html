@@ -158,7 +158,7 @@
     $(document).ready(function () {
       $.ajax({
         type: "GET",
-        url: "http://localhost:4000/api/users",
+        url: "https://registerform-1.onrender.com/api/users",
         success: function (response) {
           const usersTableBody = $("#usersTableBody");
           response.forEach((user) => {
