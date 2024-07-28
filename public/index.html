@@ -232,38 +232,38 @@ body
               password: $('input[name="password"]').val(),
             };
   
-            $.ajax({
-              type: "POST",
-              url: "https://registerform-1.onrender.com/api/users",
-              data: JSON.stringify(formData),
-              contentType: "application/json",
-              success: function (response) {
-                alert("User saved successfully");
-                window.location.href = "display.html";
-              },
-              error: function (xhr) {
-                console.log("Error response:", xhr.responseText);
-                let errorMessage = "Error saving user:\n";
-  
-                try {
-                  const response = JSON.parse(xhr.responseText);
-                  if (response.errors) {
-                    for (const field in response.errors) {
-                      errorMessage += `${field}: ${response.errors[field]}\n`;
-                    }
-                  } else {
-                    errorMessage += "An unknown error occurred.";
+$.ajax({
+            type: "POST",
+            url: "https://registerform-1.onrender.com/api/users",
+            data: JSON.stringify(formData),
+            contentType: "application/json",
+            success: function (response) {
+              alert("User saved successfully");
+              window.location.href = "display.html";
+            },
+            error: function (xhr) {
+              console.log("Error response:", xhr.responseText);
+              let errorMessage = "Error saving user:\n";
+
+              try {
+                const response = JSON.parse(xhr.responseText);
+                if (response.errors) {
+                  for (const field in response.errors) {
+                    errorMessage += `${field}: ${response.errors[field]}\n`;
                   }
-                } catch (e) {
+                } else {
                   errorMessage += "An unknown error occurred.";
                 }
-  
-                alert(errorMessage);
-              },
-            });
+              } catch (e) {
+                errorMessage += "An unknown error occurred.";
+              }
+
+              alert(errorMessage);
+            },
           });
         });
-      </script>
-  
+      });
+    </script>
+
 </body>
 </html>
