@@ -12,8 +12,9 @@ val();
 
 // Middleware
 app.use(cors({
-  origin: "https://registerform-1.onrender.com";
-  ));
+  origin: "https://registerform-1.onrender.com",
+})
+);
 app.use(bodyParser.json());
 
 // MongoDB connection
