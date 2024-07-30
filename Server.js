@@ -12,7 +12,7 @@ val();
 
 // Middleware
 app.use(cors({
-  origin: "https://registerform-1.onrender.com",
+  origin: "https://form-dwl0.onrender.com",
 })
 );
 app.use(bodyParser.json());
