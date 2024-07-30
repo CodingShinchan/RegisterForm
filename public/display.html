@@ -8,142 +8,151 @@
 </head>
 <body>
   <!-- HTML -->
-      <div class="container">
-    <table>
+
+  <div class="scrollable_table">
+    <table >
         <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Mobile No</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Login ID</th>
-                <th>Password</th>
-            </tr>
-        </thead>
-        <tbody id="usersTableBody"></tbody>
-    </table>
-    <button class="btn" id="addNewUserBtn">Add New User</button>
-</div>
+          <tr >
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Login ID</th>
+            <th>Password</th>
+          </tr>
+          
+</thead>
+        <tbody id="usersTableBody">
+ </tbody>
+      </table>
+      </div>
+      <button id="addNewUserBtn">Add New User</button>
+
+
 
 
 
   <!-- CSS -->
   <style>
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  body,
+  html {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: rgb(88, 56, 250);
-}
-
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
+    flex-direction: column;
+    margin: auto;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; 
-}
+    overflow: hidden;
+    padding: 20px 0;
+  }
 
-table {
+
+
+
+  
+  #tableContainer {
+    /* width: 80%; */
+    max-width: max-content;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #022b32;
+    border: 2px solid #37484d;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(71, 71, 169, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+  }
+  
+  table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-th, td {
-    padding: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid rgba(210, 214, 140, 0.9);
+  }
+  
+  th,
+  td {
+    padding: 10px;
     text-align: left;
-    border: 1px solid #dee2e6;
-}
+    background-color: #fff;
+    color: #022b32;
+    font-size: 15px;
+  }
 
-th {
-    background-color: #f8f9fa;
-    color: #495057;
-    font-weight: bold;
-}
+  th
+  {
+    position: sticky;
+    top:0;
+  }
 
-tr:nth-child(even) {
-    background-color: #f1f3f5;
-}
+  .scrollable_table
+  {
+    height: auto;
+    overflow-y: auto;
 
-tr:hover {
-    background-color: #e9ecef;
-}
+  }
 
-.btn {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 0 auto;
-    padding: 12px;
-    font-size: 18px;
+  td:hover
+  {
+    background-color: rgb(88, 56, 250);
     color: #fff;
-    background-color: #007bff;
+  }
+
+  tr
+  {
+    font-size: 15px;
+    background-color: #fff;
+  }
+
+  tr:hover
+  {
+    background-color: rgb(88, 56, 250);
+    color: #fff;
+
+  }
+  
+  
+  th {
+    background-color: rgb(88, 56, 250);
+    color: white;
+  }
+  
+  #addNewUserBtn {
+    margin: auto;
+    width: 150px;
+    padding: 10px;
+    background-color: rgb(88, 56, 250);
+    color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 0 5px rgba(70, 68, 68, 0.5);
+    margin-top: 20px;
+  }
+  
+  #addNewUserBtn:hover {
+    background-color: #645ae7;
+  }
 
-.btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
 
-.btn:active {
-    background-color: #004085;
-    transform: scale(0.98);
-}
 
-/* Responsive design */
-@media (max-width: 768px) {
-    table {
-        font-size: 14px;
-    }
 
-    th, td {
-        padding: 8px;
-    }
-
-    .btn {
-        max-width: 200px;
-        padding: 10px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn {
-        max-width: 100%;
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th, td {
-        padding: 6px;
-    }
-}
-    </style>
 
     <!-- Script -->
 
